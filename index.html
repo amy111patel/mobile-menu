@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<style type="text/css">
+		/* Reset Styles */
+		* {
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		}
+
+		/* Header Styles */
+		header {
+		  background-color: #0066cc;
+		  color: #fff;
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		  padding: 10px 50px;
+		}
+
+		nav {
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		  width: 100%;
+		}
+
+		.logo a {
+		  font-size: 24px;
+		  font-weight: 700;
+		  text-decoration: none;
+		  font-family: Arial, sans-serif;
+		}
+
+		.menu-icon {
+		  display: none;
+		  font-size: 24px;
+		  cursor: pointer;
+		  color: #fff;
+		}
+
+		.menu {
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  font-family: Arial, sans-serif;
+		}
+
+		.menu li {
+		  list-style: none;
+		  margin: 0 10px;
+		}
+
+		.menu li a {
+		  color: #fff;
+		  text-decoration: none;
+		  font-size: 16px;
+		}
+
+		/* Media Queries */
+		@media only screen and (max-width: 768px) {
+		  .menu {
+		    display: none;
+		  }
+		  .menu-icon {
+		    display: block;
+		  }
+		  .menu-icon i {
+		    color: #fff;
+		  }
+		  header {
+		    padding: 10px 20px;
+		  }
+		  .menu.active {
+		    display: flex;
+		    flex-direction: column;
+		    position: absolute;
+		    top: 70px;
+		    left: 0;
+		    width: 100%;
+		    background-color: #0066cc;
+		    z-index: 1;
+		    text-align: center;
+		    overflow: hidden;
+		    max-height: 0;
+		    transition: max-height 0.5s ease-in-out;
+		  }
+		  .menu.active li {
+		    margin: 10px 0;
+		  }
+		  .menu.active li a {
+		    font-size: 20px;
+		  }
+		  .menu.active.max-height {
+		    max-height: 300px;
+		  }
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+	<header>
+	  <nav>
+	    <div class="logo"><a href="#">Logo</a></div>
+	    <div class="menu-icon">
+	      <i class="fas fa-bars"></i>
+	    </div>
+	    <ul class="menu">
+	      <li><a href="#">Home</a></li>
+	      <li><a href="#">About</a></li>
+	      <li><a href="#">Services</a></li>
+	      <li><a href="#">Blog</a></li>
+	      <li><a href="#">Contact</a></li>
+	    </ul>
+	  </nav>
+	</header>
+
+<script type="text/javascript">
+	var menuIcon = document.querySelector(".menu-icon");
+	var menu = document.querySelector(".menu");
+
+	menuIcon.addEventListener("click", function() {
+	  menu.classList.toggle("active");
+	});
+
+</script>
+
+
+
+</body>
+</html>
