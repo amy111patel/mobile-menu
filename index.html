@@ -64,8 +64,14 @@
 
 		/* Media Queries */
 		@media only screen and (max-width: 768px) {
+		  @keyframes fadeIn {
+			  0% { opacity: 0; }
+			  50% { opacity: 1; }
+			  100% { opacity: 1; }
+	      }
 		  .menu {
 		    display: none;
+		    height: auto;
 		  }
 		  .menu-icon {
 		    display: block;
@@ -87,8 +93,8 @@
 		    z-index: 1;
 		    text-align: center;
 		    overflow: hidden;
-		    max-height: 0;
 		    transition: max-height 0.5s ease-in-out;
+		    animation: fadeIn 1s;
 		  }
 		  .menu.active li {
 		    margin: 10px 0;
@@ -100,9 +106,6 @@
 		    max-height: 300px;
 		  }
 		}
-
-
-
 	</style>
 </head>
 <body>
